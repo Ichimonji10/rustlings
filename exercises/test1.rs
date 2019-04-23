@@ -8,7 +8,13 @@
 // the price of an order of apples given the order amount. No hints this time!
 
 // Put your function here!
-// fn ..... {
+fn calculateprice(num_apples: u32) -> u32 {
+    if num_apples <= 40 {
+        num_apples * 2
+    } else {
+        num_apples
+    }
+}
 
 // Don't modify this function!
 #[test]
@@ -18,4 +24,10 @@ fn verify_test() {
 
     assert_eq!(price1, 55);
     assert_eq!(price2, 80);
+
+    // Ha ha! Modifying it anyway!
+    let price3 = calculateprice(39);
+    let price4 = calculateprice(41);
+    assert_eq!(price3, 78);
+    assert_eq!(price4, 41);
 }
