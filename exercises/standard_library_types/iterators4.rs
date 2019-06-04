@@ -10,6 +10,11 @@ pub fn factorial(num: u64) -> u64 {
     // For the most fun don't use:
     // - recursion
     // Scroll down for hints.
+    if num <= 1 {
+        num
+    } else {
+        num * factorial(num - 1)
+    }
 }
 
 #[cfg(test)]
@@ -20,9 +25,15 @@ mod tests {
     fn factorial_of_1() {
         assert_eq!(1, factorial(1));
     }
+
     #[test]
     fn factorial_of_2() {
         assert_eq!(2, factorial(2));
+    }
+
+    #[test]
+    fn factorial_of_3() {
+        assert_eq!(6, factorial(3));
     }
 
     #[test]
